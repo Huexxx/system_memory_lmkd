@@ -4926,7 +4926,6 @@ static void close_handle_for_perf_iop() {
 }
 
 static void init_PreferredApps() {
-    void *handle = NULL;
     if (!use_perf_api_for_pref_apps) {
         if (handle_iopd != NULL) {
             perf_ux_engine_trigger = (void (*)(int, char *))dlsym(handle_iopd, "perf_ux_engine_trigger");
