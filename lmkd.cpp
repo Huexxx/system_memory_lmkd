@@ -2583,10 +2583,6 @@ out:
     return min_score_adj;
 }
 
-static struct proc *proc_adj_lru(int oomadj) {
-  return (struct proc *)adjslot_tail(&procadjslot_list[ADJTOSLOT(oomadj)]);
-}
-
 // Note: returned entry is only an anchor and does not hold a valid process info.
 // When called from a non-main thread, adjslot_list_lock read lock should be taken.
 static struct proc *proc_adj_head(int oomadj) {
